@@ -13,7 +13,7 @@ winningtotal = 0
 winner = ""
 
 #Create output text file
-fileoutput = "results.txt"
+fileoutput = os.path.join('Analysis', 'results.txt')
 
 #Open CSV to start reading as a dictionary, start loop and skip headers
 csvpath = os.path.join('Resources', 'election_data.csv')

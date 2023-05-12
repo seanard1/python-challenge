@@ -23,7 +23,7 @@ firstpass = True
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 #Create output text file
-fileoutput = "analysis.txt"
+fileoutput = os.path.join('Analysis', 'analysis.txt')
 
 #Open CSV to start reading, start loop and skip headers
 csvpath = os.path.join('Resources', 'budget_data.csv')
