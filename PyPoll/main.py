@@ -18,14 +18,15 @@ fileoutput = os.path.join('Analysis', 'results.txt')
 #Open CSV to start reading as a dictionary, start loop and skip headers
 csvpath = os.path.join('Resources', 'election_data.csv')
 with open(csvpath, encoding='UTF-8') as csvfile:
-        csvreader = csv.DictReader(csvfile, delimiter=",")
+        csvreader = csv.reader(csvfile, delimiter=",")
+        header = next(csvreader)
         for row in csvreader:
                 
                 #Add to total vote tally
                 votes = votes + 1
 
                 #Set current ballot choice by name
-                currentballot = row["Candidate"]
+                currentballot = row[2]
 
                 #Add candidate if it's their first vote
                 if currentballot not in candidates:
